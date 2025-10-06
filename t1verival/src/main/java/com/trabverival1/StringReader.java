@@ -12,33 +12,27 @@ public class StringReader{
     }
 
     public String sumStrings(String sA, String sB){
-        int soma = 0;
-        
-        //Verifica se pode virar char
+        //Verifica se pode ser aceito
         assert verificaTamCaractere();
         
+        StringBuilder soma = new StringBuilder();
+
         char[] ca = sA.toCharArray();
         char[] cb = sB.toCharArray();
-        
-        for (int i = 0; i < ca.length-1; i++) {
+        char[] cc = new char[ca.length + cb.length];
+
+        for (int i = 0; i < cc.length-1; i++) {
+
+            for (int j = 0; j < cc.length-1; j++) {
+                cc[i] = '0';
+            }
         //Verifica se o caractere se encaixa na condição
         assert verificaCaractereValido(i);
         
-        soma = ca[i] + soma;
-
+        //TODO SOMA DAS DUAS STRINGS
         }
 
-        for (int i = 0; i < cb.length-1; i++) {
-        //Verifica se o caractere se encaixa na condição
-        assert verificaCaractereValido(i);
-        
-        soma = cb[i] + soma;
-
-        }
-
-        String cc = ""+soma;
-
-        return cc;
+        return soma.toString();
     }
 
     public boolean verificaCaractereValido(int i){
@@ -50,9 +44,27 @@ public class StringReader{
     }
 
     public boolean verificaTamCaractere(){
-        if (stringA.length() > 1 || stringB.length() > 1) {
-            return false;
+    //Verifica se o caractere esta dentro dos lmites aceitos pelo integer
+        if (stringA.length()==10 || stringB.length()==10) {
+            String comp = "2147483647";
+            if(stringA.length() == 10){
+            for (int i = 0; i < stringA.length()-1; i++) {
+                if (stringA.length()> comp.charAt(i)) {
+                    return false;
+                }
+            }
+        } else if (stringA.length() == 10){
+            for (int i = 0; i < stringB.length()-1; i++) {
+                if (stringB.charAt(i) > comp.charAt(i)) {
+                    return false;
+                }
+            }
         }
+    }
         return true;
+    }
+    public int soma(int a, int b){
+        int result = a+b;
+        return result;
     }
 }
