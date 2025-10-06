@@ -11,28 +11,56 @@ public class StringReader{
         sum = sumStrings(stringA, stringB);
     }
 
-    public String sumStrings(String sA, String sB){
-        //Verifica se pode ser aceito
+    public String sumStrings(String a, String b){
+        //verifica se o caractere é valido
         assert verificaTamCaractere();
         
-        StringBuilder soma = new StringBuilder();
+        if (a == null || a.isEmpty()) return b;
+        if (b == null || b.isEmpty()) return a;
 
-        char[] ca = sA.toCharArray();
-        char[] cb = sB.toCharArray();
-        char[] cc = new char[ca.length + cb.length];
+        // Remover zeros à esquerda
+        a = a.replaceFirst("^0+(?!$)", "");
+        b = b.replaceFirst("^0+(?!$)", "");
 
-        for (int i = 0; i < cc.length-1; i++) {
+        StringBuilder sb = new StringBuilder();
 
-            for (int j = 0; j < cc.length-1; j++) {
-                cc[i] = '0';
+        int carry = 0;
+        int i = a.length() - 1;
+        int j = b.length() - 1;
+
+        // Soma dígito a dígito, como no papel
+        while (i >= 0 || j >= 0 || carry > 0) {
+            int digitA = 0;
+            int digitB = 0;
+
+            if (i >= 0) {
+                //verifica se o caractere é valido
+                assert verificaCaractereValido(i);
+
+                // Converter o caractere '0'-'9' em número inteiro
+                digitA = Character.getNumericValue(a.charAt(i));
+                i--; // andar para a esquerda
             }
-        //Verifica se o caractere se encaixa na condição
-        assert verificaCaractereValido(i);
-        
-        //TODO SOMA DAS DUAS STRINGS
+
+            if (j >= 0) {
+                //verifica se o caractere é valido
+                assert verificaCaractereValido(j);
+
+                digitB = Character.getNumericValue(b.charAt(j));
+                j--;
+            }
+
+            int sum = digitA + digitB + carry;
+
+            // Atualiza o transporte e o dígito atual
+            carry = sum / 10;     // divisão inteira
+            int current = sum % 10; // resto da divisão (último dígito)
+
+            sb.append(current);
         }
 
-        return soma.toString();
+        // O resultado foi montado de trás para frente
+        return sb.reverse().toString();
     }
 
     public boolean verificaCaractereValido(int i){
@@ -62,9 +90,5 @@ public class StringReader{
         }
     }
         return true;
-    }
-    public int soma(int a, int b){
-        int result = a+b;
-        return result;
     }
 }
