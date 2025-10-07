@@ -22,7 +22,7 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-        settings-path: $GITHUB_WORKSPACE/t1-verival-s2-2025/.maven/settings.xml # location for the settings.xml file
+        settings-path: .maven/settings.xml # location for the settings.xml file
 
     - name: Build with Maven
       working-directory: t1verival
