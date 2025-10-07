@@ -25,7 +25,6 @@ jobs:
         settings-path: .maven 
 
     - name: Build with Maven
-      working-directory: t1verival
       run: mvn -B package -s .maven
       
 
