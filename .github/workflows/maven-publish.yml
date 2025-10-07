@@ -25,7 +25,7 @@ jobs:
         settings-path: $GITHUB_WORKSPACE/t1-verival-s2-2025/.maven/settings.xml # location for the settings.xml file
 
     - name: Build with Maven
-      run: mvn -B package t1verival/pom.xml
+      run: mvn -B package -f t1verival/pom.xml
 
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/.maven/settings.xml
