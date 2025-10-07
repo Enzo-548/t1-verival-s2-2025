@@ -7,14 +7,13 @@ public class StringReaderTest {
 @Test
 public void testStringAVazia() {
     StringReader reader = new StringReader("", "123");
-    assertEquals("123", reader.sumStrings(reader.stringA, reader.stringB));
+    assertFalse(reader.verificaCaractereValido(), "String a é vazia");
 }
 
 @Test
 public void testStringBVazia() {
     StringReader reader = new StringReader("456", "");
-    assertEquals("456", reader.sumStrings(reader.stringA, reader.stringB));
-}
+    assertFalse(reader.verificaCaractereValido(), "String b é vazia");}
 //
     @Test
 public void testStringANula() {
@@ -62,7 +61,6 @@ public void testSomaBasicaComUmDigito() {
         assertEquals("1010", reader.sumStrings(reader.stringA, reader.stringB), "A soma de 123 + 456 deve ser 579");
     }
 
-//Resultados esperados: Assertion Error: Alguma das strings possui caracteres invalidos
     @Test
     public void testStringVaziaNaStringA() {
         StringReader reader = new StringReader("", "1");
@@ -88,8 +86,6 @@ public void testSomaBasicaComUmDigito() {
         StringReader reader = new StringReader("null", "");
         assertFalse(reader.verificaCaractereValido(), "Nao deve passar o teste, devida a string negativa");
     }
-//Resultados esperados: Assertion Error: Alguma das strings possui caracteres invalidos
-//#####    
 @Test
     public void testVerificaCaractereValidoParaStringAComCharMaiorQue56() {
         StringReader reader = new StringReader("12a", "34");
