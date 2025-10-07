@@ -19,7 +19,7 @@ jobs:
 
     - name: Build with Maven
       working-directory: t1verival
-      run: mvn -B package -s .maven/settings.xml
+      run: mvn -B package -s .maven
       
 
     - name: Publish to GitHub Packages Apache Maven
