@@ -12,13 +12,13 @@ public class StringReader{
     }
 
     public String sumStrings(String a, String b){
-        //verifica se o caractere é valido
+        /*verifica se o caractere é valido
         assert verificaTamCaractere();
-        
+        */
         if (a == null || a.isEmpty()) return b;
         if (b == null || b.isEmpty()) return a;
 
-        // Remover zeros à esquerda
+        // Formata de forma que elimina os zeros a esquerda
         a = a.replaceFirst("^0+(?!$)", "");
         b = b.replaceFirst("^0+(?!$)", "");
 
@@ -35,8 +35,10 @@ public class StringReader{
 
             if (i >= 0) {
                 //verifica se o caractere é valido
-                assert verificaCaractereValido(i);
-
+                assert verificaCaractereValido(i, stringA);
+                /*if (verificaCaractereValido(i, stringA) == false) {
+                    break;
+                }*/
                 // Converter o caractere '0'-'9' em número inteiro
                 digitA = Character.getNumericValue(a.charAt(i));
                 i--; // andar para a esquerda
@@ -44,8 +46,10 @@ public class StringReader{
 
             if (j >= 0) {
                 //verifica se o caractere é valido
-                assert verificaCaractereValido(j);
-
+                assert verificaCaractereValido(j,stringB);
+                /*if (verificaCaractereValido(i, stringB) == false) {
+                    break;
+                }*/
                 digitB = Character.getNumericValue(b.charAt(j));
                 j--;
             }
@@ -63,9 +67,9 @@ public class StringReader{
         return sb.reverse().toString();
     }
 
-    public boolean verificaCaractereValido(int i){
-        if ((stringA.charAt(i) > 9 && stringA.charAt(i)<0) || 
-        (stringB.charAt(i) > 9 && stringB.charAt(i)<0)) {
+    //verifica se o caractere e valido para a soma
+    public boolean verificaCaractereValido(int i, String s){
+        if ((s.charAt(i) > '9' || s.charAt(i)<'0')) {
             return false;
         }
         return true;
@@ -81,7 +85,7 @@ public class StringReader{
                     return false;
                 }
             }
-        } else if (stringA.length() == 10){
+        } else if (stringB.length() == 10){
             for (int i = 0; i < stringB.length()-1; i++) {
                 if (stringB.charAt(i) > comp.charAt(i)) {
                     return false;
