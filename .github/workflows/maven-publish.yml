@@ -25,7 +25,8 @@ jobs:
         settings-path: .maven 
 
     - name: Build with Maven
-      run: mvn -B package -s .maven/settings.xml
+      working-directory: t1verival
+      run: mvn -B package -s .maven/settings.yml
       
 
     - name: Publish to GitHub Packages Apache Maven
