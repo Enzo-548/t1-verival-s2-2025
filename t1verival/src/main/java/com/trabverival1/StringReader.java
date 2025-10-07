@@ -3,7 +3,7 @@ package com.trabverival1;
 public class StringReader{
     public String stringA;
     public String stringB;
-    
+
     public StringReader(String stringA, String stringB){
         this.stringA = stringA;
         this.stringB = stringB;
@@ -12,10 +12,7 @@ public class StringReader{
     public String sumStrings(String a, String b){
         //verifica se o caractere é valido
         assert verificaCaractereValido() : "Alguma das strings possui caracteres invalidos";
-        
-        if (a == null || a.isEmpty()) return b;
-        if (b == null || b.isEmpty()) return a;
-
+    
         // Formata de forma que elimina os zeros a esquerda
         a = a.replaceFirst("^0+(?!$)", "");
         b = b.replaceFirst("^0+(?!$)", "");
@@ -57,6 +54,9 @@ public class StringReader{
 
     //verifica se o caractere e valido para a soma
     public boolean verificaCaractereValido(){
+        if ((stringA == null || stringA.isEmpty()) || (stringB==null || stringB.isEmpty())) {
+            return false;
+        }
         int i = stringA.length();
         int j = stringB.length();
         while (true) {
@@ -67,18 +67,17 @@ public class StringReader{
             j--;
         }
             
-        if ((stringA.isEmpty() || stringA == null) || (stringB.isEmpty() || stringB == null)||
-            (stringA.charAt(i) < 48 || stringA.charAt(i) > 56) ||
-            (stringB.charAt(j) < 48 || stringB.charAt(j) > 56)) {
+        if ((stringA.charAt(i) < 48 || stringA.charAt(i) > 57) ||
+            (stringB.charAt(j) < 48 || stringB.charAt(j) > 57)) {
             return false;
-        }else if (i == 0 && j==0) {
+        }else if (i == 0 && j == 0) {
             break;
         }
     }
         return true;
     }
 
-    public boolean verificaTamCaractere(){
+    /*public boolean verificaTamCaractere(){
     //Verifica se o caractere esta dentro dos lmites aceitos pelo integer
         if (stringA.length()==10 || stringB.length()==10) {
             String comp = "2147483647";
@@ -97,5 +96,5 @@ public class StringReader{
         }
     }
         return true;
-    }
+    }*/
 }
