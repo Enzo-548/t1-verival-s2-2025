@@ -44,5 +44,16 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
-
+<distributionManagement>
+    <repository>
+      <id>github</id> <!-- Deve combinar com settings.xml -->
+      <name>Github Packages</name>
+      <url>https://maven.pkg.github.com/Enzo-548/t1-verival-s2-2025</url>
+    </repository>
+    <snapshotRepository>
+      <id>github</id> <!-- Mesma id pode funcionar -->
+      <name>GitHub Packages Snapshots</name>
+      <url>https://maven.pkg.github.com/Enzo-548/t1-verival-s2-2025</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
