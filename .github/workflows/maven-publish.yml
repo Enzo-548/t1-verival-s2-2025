@@ -30,7 +30,7 @@ jobs:
       
 
     - name: Publish to GitHub Packages Apache Maven
-    working-directory: t1verival
-      run: mvn deploy -s .maven/settings.xml
+      working-directory: t1verival
+      run: mvn deploy -s .maven/settings.yml
       env:
         GITHUB_TOKEN: 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
