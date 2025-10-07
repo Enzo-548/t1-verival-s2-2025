@@ -3,18 +3,16 @@ package com.trabverival1;
 public class StringReader{
     public String stringA;
     public String stringB;
-    public String sum;
-
+    
     public StringReader(String stringA, String stringB){
         this.stringA = stringA;
         this.stringB = stringB;
-        sum = sumStrings(stringA, stringB);
     }
 
     public String sumStrings(String a, String b){
-        /*verifica se o caractere é valido
-        assert verificaTamCaractere();
-        */
+        //verifica se o caractere é valido
+        assert verificaCaractereValido() : "Alguma das strings possui caracteres invalidos";
+        
         if (a == null || a.isEmpty()) return b;
         if (b == null || b.isEmpty()) return a;
 
@@ -34,22 +32,12 @@ public class StringReader{
             int digitB = 0;
 
             if (i >= 0) {
-                //verifica se o caractere é valido
-                assert verificaCaractereValido(i, stringA);
-                /*if (verificaCaractereValido(i, stringA) == false) {
-                    break;
-                }*/
                 // Converter o caractere '0'-'9' em número inteiro
                 digitA = Character.getNumericValue(a.charAt(i));
                 i--; // andar para a esquerda
             }
 
             if (j >= 0) {
-                //verifica se o caractere é valido
-                assert verificaCaractereValido(j,stringB);
-                /*if (verificaCaractereValido(i, stringB) == false) {
-                    break;
-                }*/
                 digitB = Character.getNumericValue(b.charAt(j));
                 j--;
             }
@@ -68,10 +56,25 @@ public class StringReader{
     }
 
     //verifica se o caractere e valido para a soma
-    public boolean verificaCaractereValido(int i, String s){
-        if ((s.charAt(i) > '9' || s.charAt(i)<'0')) {
-            return false;
+    public boolean verificaCaractereValido(){
+        int i = stringA.length();
+        int j = stringB.length();
+        while (true) {
+        if (i>0) {
+            i--;
         }
+        if(j>0){
+            j--;
+        }
+            
+        if ((stringA.isEmpty() || stringA == null) || (stringB.isEmpty() || stringB == null)||
+            (stringA.charAt(i) < 48 || stringA.charAt(i) > 56) ||
+            (stringB.charAt(j) < 48 || stringB.charAt(j) > 56)) {
+            return false;
+        }else if (i == 0 && j==0) {
+            break;
+        }
+    }
         return true;
     }
 
