@@ -5,14 +5,26 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class StringReaderTest {
 @Test
-public void testStringBNula() {
-    StringReader reader = new StringReader("10", null);
-    assertFalse(reader.verificaCaractereValido(), "String b é nula.");
+public void testStringAVazia() {
+    StringReader reader = new StringReader("", "123");
+    assertEquals("123", reader.sumStrings(reader.stringA, reader.stringB));
 }
+
+@Test
+public void testStringBVazia() {
+    StringReader reader = new StringReader("456", "");
+    assertEquals("456", reader.sumStrings(reader.stringA, reader.stringB));
+}
+//
     @Test
 public void testStringANula() {
     StringReader reader = new StringReader(null, "123");
     assertFalse(reader.verificaCaractereValido());
+}
+    @Test
+public void testSomaBasicaComUmDigito() {
+    StringReader reader = new StringReader("1", "1");
+    assertEquals("2", reader.sumStrings(reader.stringA, reader.stringB));
 }
     @Test
     public void testSomaBasicaComTermosDeMesmoTamanhoEmStringAComCaractereInvalido() {
