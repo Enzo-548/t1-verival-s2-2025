@@ -19,18 +19,22 @@ cobertura no codecov abaixo.
 ## CONTRIBUIÇÕES
 ### código:
 
- Classe StringReader -> CHATGPT(elaboracao do exercicio), Enzo SP(Elaboração do método verificacaracterevalido())
+ Classe StringReader -> CHATGPT(elaboracao do exercicio), Enzo SP(Elaboração do método verificacaracterevalido());
 
- Testes -> CHATGPT(leves ajustes nos casos de teste, caso de teste dos caracteres nulos), Enzo SP(todos, com exceções, os casos de testes)
+ Testes -> CHATGPT(leves ajustes nos casos de teste, caso de teste dos caracteres nulos), Enzo SP(todos, com exceções, os casos de testes);
 
 ### planejamento:
- Casos de teste -> Enzo SP
+ Casos de teste -> Enzo SP;
 
- Metodologia de testes(escolha) -> Enzo SP
+ Metodologia de testes(escolha) -> Enzo SP;
 
 ### automação:
  Grande junta com o CHATGPT, me ensinando a fazer release e usar o actions, e Enzo SP por pacientemente fazer tudo que precisar pra conquistar a
- bem dita badge do codecov
+ bem dita badge do codecov;
+
+ ### documentação:
+ CHATGPT -> Resumo dos casos de teste do arquivo StringReaderTest.java em uma forma textual com os inputs e resultados esperados em tests.md
+ Enzo SP -> README completo e um textinho mixuruca em italico em tests.md como auto critica, acontece, esperando grandes observações deste trabalho em.
 
 <a href="https://codecov.io/github/Enzo-548/t1-verival-s2-2025" > 
  <img src="https://codecov.io/github/Enzo-548/t1-verival-s2-2025/graph/badge.svg?token=BXVPXK0AOU"/> 
