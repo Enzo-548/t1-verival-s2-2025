@@ -33,7 +33,7 @@ jobs:
       working-directory: t1verival
       run: mvn deploy -s .maven/settings.yml
       env:
-        GITHUB_TOKEN: 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
+        GITHUB_TOKEN: TOKENAMUDAR
 
     - name: Run tests
       working-directory: t1verival
@@ -48,4 +48,4 @@ jobs:
       with:
         files: t1verival/target/site/jacoco/jacoco.xml
         fail_ci_if_error: true
-        token: 80553795-0e8b-4f66-a825-1028892d8dc0
+        token: TOKENAMUDAR
