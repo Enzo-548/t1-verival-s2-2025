@@ -34,3 +34,11 @@ jobs:
       run: mvn deploy -s .maven/settings.yml
       env:
         GITHUB_TOKEN: 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
+
+    - name: Run tests
+      run: mvn test
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v4
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
