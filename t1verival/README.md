@@ -28,6 +28,11 @@ cobertura no codecov abaixo.
 
  Metodologia de testes(escolha) -> Enzo SP;
 
+#### Tecnicas de teste por contrato
+ Neste kata foi utilizado de teste por contrato interno, ITC, para detecção de erros durante a elaboração dos testes e testes por contratos externos ou 
+ ETC, num arquivo de testes separados afins de maximizar o coverage do código. Não foi utilizada Design by Contract de forma extensiva, poderia dizer que
+ esta implicito no código, na forma que os testes operam, mas não há nenhum documento em específico com as especificações.
+
 ### automação:
  Grande junta com o CHATGPT, me ensinando a fazer release e usar o actions, e Enzo SP por pacientemente fazer tudo que precisar pra conquistar a
  bem dita badge do codecov;
@@ -37,6 +42,6 @@ cobertura no codecov abaixo.
  
  Enzo SP -> README completo e um textinho mixuruca em italico em tests.md como auto critica, acontece, esperando grandes observações deste trabalho em.
 
-<a href="https://codecov.io/github/Enzo-548/t1-verival-s2-2025" > 
+<a href="https://codecov.io/github/Enzo-548/t1-verival-s2-2025"> 
  <img src="https://codecov.io/github/Enzo-548/t1-verival-s2-2025/graph/badge.svg?token=BXVPXK0AOU"/> 
  </a>
