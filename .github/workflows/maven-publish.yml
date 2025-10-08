@@ -38,7 +38,7 @@ jobs:
     - name: Run tests
       working-directory: t1verival
       run: mvn test
-      
+
     - name: Run codecov coverage
       working-directory: t1verival
       run: pytest --cov --cov-branch --cov-report=xml
@@ -46,4 +46,4 @@ jobs:
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v4
       with:
-        token: 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
+        token: 80553795-0e8b-4f66-a825-1028892d8dc0
