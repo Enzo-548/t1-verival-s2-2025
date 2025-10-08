@@ -36,6 +36,7 @@ jobs:
         GITHUB_TOKEN: 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
 
     - name: Run tests
+      working-directory: t1verival
       run: mvn test
 
     - name: Upload coverage to Codecov
