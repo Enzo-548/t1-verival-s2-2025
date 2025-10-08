@@ -33,7 +33,8 @@ cobertura no codecov abaixo.
  bem dita badge do codecov;
 
  ### documentação:
- CHATGPT -> Resumo dos casos de teste do arquivo StringReaderTest.java em uma forma textual com os inputs e resultados esperados em tests.md
+ CHATGPT -> Resumo dos casos de teste do arquivo StringReaderTest.java em uma forma textual com os inputs e resultados esperados em tests.md;
+ 
  Enzo SP -> README completo e um textinho mixuruca em italico em tests.md como auto critica, acontece, esperando grandes observações deste trabalho em.
 
 <a href="https://codecov.io/github/Enzo-548/t1-verival-s2-2025" > 
