@@ -39,20 +39,15 @@ jobs:
       working-directory: t1verival
       run: mvn test
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
+    - name: Run tests with coverage
+      working-directory: t1verival
+      run: mvn clean test jacoco:report
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v4
       with:
-        python-version: '3.11'  # ou outra versão desejada
-
-    - name: Install dependencies
-      working-directory: t1verival
-      run: |
-        python -m pip install --upgrade pip
-        pip install pytest pytest-cov
-
-    - name: Run codecov coverage
-      working-directory: t1verival
-      run: pytest --cov --cov-branch --cov-report=xml
+        files: t1verival/target/site/jacoco/jacoco.xml
+        fail_ci_if_error: true
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v4
