@@ -4,6 +4,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 public class StringReaderTest {
+
+@Test
+public void testDuasStringsNulas() {
+    StringReader reader = new StringReader(null, null);
+    assertFalse(reader.verificaCaractereValido());
+}
+
 @Test
 public void testStringAVazia() {
     StringReader reader = new StringReader("", "123");
@@ -18,6 +25,12 @@ public void testStringBVazia() {
     @Test
 public void testStringANula() {
     StringReader reader = new StringReader(null, "123");
+    assertFalse(reader.verificaCaractereValido());
+}
+
+@Test
+public void testStringBNula() {
+    StringReader reader = new StringReader("12", null);
     assertFalse(reader.verificaCaractereValido());
 }
     @Test
@@ -83,7 +96,7 @@ public void testSomaBasicaComUmDigito() {
     }
     @Test
     public void testCaractereInvalidoNasDuasStrings() {
-        StringReader reader = new StringReader("null", "");
+        StringReader reader = new StringReader(null, "");
         assertFalse(reader.verificaCaractereValido(), "Nao deve passar o teste, devida a string negativa");
     }
 @Test

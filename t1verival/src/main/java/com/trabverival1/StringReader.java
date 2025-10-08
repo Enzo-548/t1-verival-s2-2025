@@ -77,24 +77,5 @@ public class StringReader{
         return true;
     }
 
-    /*public boolean verificaTamCaractere(){
-    //Verifica se o caractere esta dentro dos lmites aceitos pelo integer
-        if (stringA.length()==10 || stringB.length()==10) {
-            String comp = "2147483647";
-            if(stringA.length() == 10){
-            for (int i = 0; i < stringA.length()-1; i++) {
-                if (stringA.length()> comp.charAt(i)) {
-                    return false;
-                }
-            }
-        } else if (stringB.length() == 10){
-            for (int i = 0; i < stringB.length()-1; i++) {
-                if (stringB.charAt(i) > comp.charAt(i)) {
-                    return false;
-                }
-            }
-        }
-    }
-        return true;
-    }*/
+   
 }
