@@ -10,6 +10,6 @@
     teste_especificacao_tempo_real/ -> Real Time Testing, em go
 
 ## Contribuições
-  🤖 Pedro Augusto Pereira -> pedroaugustopereira2004@gmail.com 
+  🤖 Pedro Augusto Pereira -> pedroaugustopereira2004@gmail.com -> teste_especificacao_tempo_real/
   
-  🤖 Enzo Salatino Picoli -> enzosalatinopicoli@gmail.com
+  🤖 Enzo Salatino Picoli -> enzosalatinopicoli@gmail.com -> t1verival/
